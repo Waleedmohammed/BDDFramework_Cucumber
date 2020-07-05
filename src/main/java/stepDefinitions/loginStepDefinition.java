@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class loginStepDefinition {
@@ -36,9 +38,14 @@ public class loginStepDefinition {
 
     }
 
-    @Then("^User Enter \"(.*)\" & \"(.*)\"$")
-    public void user_Enter_UserName_Password(String username, String password) {
+    //@Then("^User Enter \"(.*)\" & \"(.*)\"$")
+    @Then("^User Enter userName and Password$")
+    public void user_Enter_UserName_Password(
+            //String username, String password
+            DataTable credentials) {
 
+        //When using Data Table
+        List<List<String>> data = credentials.raw();
         WebDriverWait wait = new WebDriverWait(driver, 30);
 
         WebElement loginLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='collapse navbar-collapse']/ul/li/a[contains(text(),'Log In')]")));
@@ -47,10 +54,10 @@ public class loginStepDefinition {
         //loginLink.click();
 
         WebElement userNametxtBox = driver.findElement(By.name("email"));
-        userNametxtBox.sendKeys(username);
+        userNametxtBox.sendKeys(data.get(0).get(0));
 
         WebElement passwordtxtBox = driver.findElement(By.name("password"));
-        passwordtxtBox.sendKeys(password);
+        passwordtxtBox.sendKeys(data.get(0).get(1));
 
     }
 
@@ -71,50 +78,50 @@ public class loginStepDefinition {
         Assert.assertEquals("Cogmento CRM", title);
     }
 
-    @Then("^User navigated to contact Page$")
-    public void user_navigated_to_contact_Page() {
-
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        WebElement contactLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui fluid container']/div/a[@href='/contacts']")));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", contactLink);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        WebElement newContactbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //button[@class='ui linkedin button']/i[@class='edit icon']")));
-        newContactbtn.click();
-
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Then("^User enters \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void user_enters_and_and(String firstName, String lastName, String position) {
-
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        WebElement firstNametxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("first_name")));
-        firstNametxtBox.sendKeys(firstName);
-
-        WebElement lastNametxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("last_name")));
-        lastNametxtBox.sendKeys(lastName);
-
-
-        WebElement positiontxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("position")));
-        positiontxtBox.sendKeys(position);
-
-
-        WebElement savebtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui right secondary pointing menu toolbar-container']/div/button/i[@class='save icon']")));
-        JavascriptExecutor js3 = (JavascriptExecutor) driver;
-        js3.executeScript("arguments[0].click();", savebtn);
-
-    }
+//    @Then("^User navigated to contact Page$")
+//    public void user_navigated_to_contact_Page() {
+//
+//        WebDriverWait wait = new WebDriverWait(driver, 30);
+//        WebElement contactLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui fluid container']/div/a[@href='/contacts']")));
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].click();", contactLink);
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        WebElement newContactbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //button[@class='ui linkedin button']/i[@class='edit icon']")));
+//        newContactbtn.click();
+//
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//    @Then("^User enters \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
+//    public void user_enters_and_and(String firstName, String lastName, String position) {
+//
+//        WebDriverWait wait = new WebDriverWait(driver, 30);
+//        WebElement firstNametxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("first_name")));
+//        firstNametxtBox.sendKeys(firstName);
+//
+//        WebElement lastNametxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("last_name")));
+//        lastNametxtBox.sendKeys(lastName);
+//
+//
+//        WebElement positiontxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("position")));
+//        positiontxtBox.sendKeys(position);
+//
+//
+//        WebElement savebtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui right secondary pointing menu toolbar-container']/div/button/i[@class='save icon']")));
+//        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+//        js3.executeScript("arguments[0].click();", savebtn);
+//
+//    }
 
     @Then("^Signout and close the browser$")
     public void sign_out_and_close_the_browser() {

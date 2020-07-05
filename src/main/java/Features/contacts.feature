@@ -22,4 +22,4 @@ Feature: Contacts Test cases
    Examples:
 
      | userName                   | password       |firstName       |lastName       |position       |
-     | waleed.m.science@gmail.com | Passwordmmhh88 |Waleed          |Mohammed       |Software QA    |
+     | waleed.m.science@gmail.com |  |Waleed          |Mohammed       |Software QA    |
