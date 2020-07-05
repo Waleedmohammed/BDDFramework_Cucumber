@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class loginStepDefinition {
@@ -45,7 +45,9 @@ public class loginStepDefinition {
             DataTable credentials) {
 
         //When using Data Table
-        List<List<String>> data = credentials.raw();
+        //List<List<String>> data = credentials.raw();
+
+
         WebDriverWait wait = new WebDriverWait(driver, 30);
 
         WebElement loginLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='collapse navbar-collapse']/ul/li/a[contains(text(),'Log In')]")));
@@ -53,12 +55,24 @@ public class loginStepDefinition {
         js.executeScript("arguments[0].click();", loginLink);
         //loginLink.click();
 
-        WebElement userNametxtBox = driver.findElement(By.name("email"));
-        userNametxtBox.sendKeys(data.get(0).get(0));
+        //When using maps
+        for (Map<String, String> datatable : credentials.asMaps(String.class, String.class)) {
+            WebElement userNametxtBox = driver.findElement(By.name("email"));
 
-        WebElement passwordtxtBox = driver.findElement(By.name("password"));
-        passwordtxtBox.sendKeys(data.get(0).get(1));
+            //When using Data Tables
+            //userNametxtBox.sendKeys(data.get(0).get(0));
 
+            //When using Maps
+            userNametxtBox.sendKeys(datatable.get("userName"));
+
+            WebElement passwordtxtBox = driver.findElement(By.name("password"));
+
+            //When using Data Tables
+            //passwordtxtBox.sendKeys(data.get(0).get(1));
+
+            //When using Maps
+            passwordtxtBox.sendKeys(datatable.get("Password"));
+        }
     }
 
     @Then("^User click login button$")
