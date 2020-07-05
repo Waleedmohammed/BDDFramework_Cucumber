@@ -36,21 +36,21 @@ public class loginStepDefinition {
 
     }
 
-    @Then("^User Enter UserName & Password$")
-    public void user_Enter_UserName_Password() {
+    @Then("^User Enter \"(.*)\" & \"(.*)\"$")
+    public void user_Enter_UserName_Password(String username, String password) {
 
-        WebDriverWait wait=new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
 
         WebElement loginLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='collapse navbar-collapse']/ul/li/a[contains(text(),'Log In')]")));
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-    	 js.executeScript("arguments[0].click();", loginLink);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", loginLink);
         //loginLink.click();
 
         WebElement userNametxtBox = driver.findElement(By.name("email"));
-        userNametxtBox.sendKeys("waleed.m.science@gmail.com");
+        userNametxtBox.sendKeys(username);
 
         WebElement passwordtxtBox = driver.findElement(By.name("password"));
-        passwordtxtBox.sendKeys("Passwordmmhh88");
+        passwordtxtBox.sendKeys(password);
 
     }
 
@@ -71,6 +71,50 @@ public class loginStepDefinition {
         Assert.assertEquals("Cogmento CRM", title);
     }
 
+    @Then("^User navigated to contact Page$")
+    public void user_navigated_to_contact_Page() {
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebElement contactLink = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui fluid container']/div/a[@href='/contacts']")));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", contactLink);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement newContactbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //button[@class='ui linkedin button']/i[@class='edit icon']")));
+        newContactbtn.click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Then("^User enters \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_enters_and_and(String firstName, String lastName, String position) {
+
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebElement firstNametxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("first_name")));
+        firstNametxtBox.sendKeys(firstName);
+
+        WebElement lastNametxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("last_name")));
+        lastNametxtBox.sendKeys(lastName);
+
+
+        WebElement positiontxtBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("position")));
+        positiontxtBox.sendKeys(position);
+
+
+        WebElement savebtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui right secondary pointing menu toolbar-container']/div/button/i[@class='save icon']")));
+        JavascriptExecutor js3 = (JavascriptExecutor) driver;
+        js3.executeScript("arguments[0].click();", savebtn);
+
+    }
 
     @Then("^Signout and close the browser$")
     public void sign_out_and_close_the_browser() {
