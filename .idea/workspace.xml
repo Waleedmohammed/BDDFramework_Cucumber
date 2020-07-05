@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ff3c7df-49fb-406c-a44b-31930e07dbbc" name="Default Changelist" comment="" />
+    <list default="true" id="3ff3c7df-49fb-406c-a44b-31930e07dbbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json_output/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/json_output/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/junit_xml/cucumber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/junit_xml/cucumber.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Runner/testRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner/testRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-outout/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-outout/report.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +20,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -28,6 +38,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1eGLwo6S5gOzAC63yZdsf6LTfpy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -35,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/drivers" />
@@ -80,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593943223620</updated>
-      <workItem from="1593943225550" duration="6966000" />
+      <workItem from="1593943225550" duration="8698000" />
     </task>
     <servers />
   </component>
@@ -96,26 +108,26 @@
       <screen x="0" y="23" width="1792" height="1052" />
     </state>
     <state x="462" y="211" key="#testRunner/0.23.1792.1052@0.23.1792.1052" timestamp="1593948203352" />
-    <state width="1750" height="384" key="GridCell.Tab.0.bottom" timestamp="1593952332651">
+    <state width="1750" height="340" key="GridCell.Tab.0.bottom" timestamp="1593956179934">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
-    <state width="1750" height="384" key="GridCell.Tab.0.bottom/0.23.1792.1052@0.23.1792.1052" timestamp="1593950638763" />
-    <state width="1750" height="384" key="GridCell.Tab.0.bottom/0.23.1792.1053@0.23.1792.1053" timestamp="1593952332651" />
-    <state width="1750" height="384" key="GridCell.Tab.0.center" timestamp="1593952332650">
+    <state width="1750" height="340" key="GridCell.Tab.0.bottom/0.23.1792.1052@0.23.1792.1052" timestamp="1593955311972" />
+    <state width="1750" height="340" key="GridCell.Tab.0.bottom/0.23.1792.1053@0.23.1792.1053" timestamp="1593956179934" />
+    <state width="1750" height="340" key="GridCell.Tab.0.center" timestamp="1593956179933">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
-    <state width="1750" height="384" key="GridCell.Tab.0.center/0.23.1792.1052@0.23.1792.1052" timestamp="1593950638762" />
-    <state width="1750" height="384" key="GridCell.Tab.0.center/0.23.1792.1053@0.23.1792.1053" timestamp="1593952332650" />
-    <state width="1750" height="384" key="GridCell.Tab.0.left" timestamp="1593952332649">
+    <state width="1750" height="340" key="GridCell.Tab.0.center/0.23.1792.1052@0.23.1792.1052" timestamp="1593955311971" />
+    <state width="1750" height="340" key="GridCell.Tab.0.center/0.23.1792.1053@0.23.1792.1053" timestamp="1593956179933" />
+    <state width="1750" height="340" key="GridCell.Tab.0.left" timestamp="1593956179932">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
-    <state width="1750" height="384" key="GridCell.Tab.0.left/0.23.1792.1052@0.23.1792.1052" timestamp="1593950638761" />
-    <state width="1750" height="384" key="GridCell.Tab.0.left/0.23.1792.1053@0.23.1792.1053" timestamp="1593952332649" />
-    <state width="1750" height="384" key="GridCell.Tab.0.right" timestamp="1593952332651">
+    <state width="1750" height="340" key="GridCell.Tab.0.left/0.23.1792.1052@0.23.1792.1052" timestamp="1593955311970" />
+    <state width="1750" height="340" key="GridCell.Tab.0.left/0.23.1792.1053@0.23.1792.1053" timestamp="1593956179932" />
+    <state width="1750" height="340" key="GridCell.Tab.0.right" timestamp="1593956179933">
       <screen x="0" y="23" width="1792" height="1053" />
     </state>
-    <state width="1750" height="384" key="GridCell.Tab.0.right/0.23.1792.1052@0.23.1792.1052" timestamp="1593950638762" />
-    <state width="1750" height="384" key="GridCell.Tab.0.right/0.23.1792.1053@0.23.1792.1053" timestamp="1593952332651" />
+    <state width="1750" height="340" key="GridCell.Tab.0.right/0.23.1792.1052@0.23.1792.1052" timestamp="1593955311971" />
+    <state width="1750" height="340" key="GridCell.Tab.0.right/0.23.1792.1053@0.23.1792.1053" timestamp="1593956179933" />
     <state x="302" y="95" key="SettingsEditor" timestamp="1593944769608">
       <screen x="0" y="23" width="1792" height="1052" />
     </state>
