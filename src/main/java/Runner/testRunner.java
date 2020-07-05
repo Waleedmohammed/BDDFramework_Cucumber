@@ -11,7 +11,12 @@ import org.junit.runner.RunWith;
         format = {"pretty", "html:test-outout", "json:json_output/cucumber.json", "junit:junit_xml/cucumber.xml"},//to generate different types of reporting
         dryRun = false, //check mapping between step in feature file and step in step definition class
         monochrome = true, // to generate pretty output
-        strict = true
+        strict = true,
+        tags = {"~SmokeTest , Regression"} // Execute all tests taged with SmokeTest Tag or Regression Tage
+
+        // OR     -- {"SmokeTest , Regression"}       // Execute all tests taged with SmokeTest Tag OR Regression Tage
+        // AND    -- {"SmokeTest" , "Regression"}    // Execute all tests taged with SmokeTest Tag AND Regression Tage
+        // ignore -- {"~SmokeTest"}                 // ignore executing Tests which tagged with SmokeTest Tag
 )
 
 

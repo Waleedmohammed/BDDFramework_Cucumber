@@ -1,5 +1,6 @@
 Feature: Free CRM Login Feature
 
+  @SmokeTest
   Scenario : Free CRM Login Test Case
 
     Given User navigated to login page
