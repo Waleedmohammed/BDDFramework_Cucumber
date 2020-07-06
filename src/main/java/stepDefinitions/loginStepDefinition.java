@@ -2,6 +2,8 @@ package stepDefinitions;
 
 
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -20,6 +22,40 @@ import java.util.concurrent.TimeUnit;
 public class loginStepDefinition {
 
     WebDriver driver;
+
+    //=============================== Global Hooks ================================
+    @Before(order = 0)
+    public void setup() {
+        System.out.println("Will be executed before every scenario inside .feature file");
+    }
+
+    @After(order = 0)
+    public void teardown(){
+        System.out.println("Will be executed before every scenario inside .feature file");
+    }
+    @Before(order = 1)
+    public void setup2() {
+        System.out.println("Will be executed before every scenario inside .feature file");
+    }
+
+    @After(order = 1)
+    public void teardown2(){
+        System.out.println("Will be executed before every scenario inside .feature file");
+    }
+    //=============================================================================
+
+    //=============================== Tagged Hooks ================================
+    @Before("@First")
+    public void setup1() {
+        System.out.println("Will be executed before only scenario which has tage @First inside .feature file");
+    }
+
+    @After("@First")
+    public void teardown1(){
+        System.out.println("Will be executed After only scenario which has tage @First inside .feature file");
+    }
+    //=============================================================================
+
 
     @Given("^User navigated to login page$")
     public void user_navigated_to_login_page() {
